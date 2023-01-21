@@ -1,0 +1,29 @@
+.cont {
+	color: blue;
+}
+
+.diver {
+	color: red;
+}
+
+.abcd {
+	color: green;
+}
+
+.a {
+	border: 1px solid red;
+    height: 300px;
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.b {
+	border: 5px solid blue;
+	height: 100px;
+	width: 100px;
+	background-color: lightgreen;
+	margin: 10px;
+}
+

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>REST API with comments</title>
+	</head>
+
+	<body>
+		<h1>All Comments</h1>
+		<a href="/comment/new">Add new comment</a>
+		<hr />
+		<% for (let index=0; index < fakeComments.length; index++) { %>
+		<h2><%=index + 1%> : <%=fakeComments[index]['id'] %></h2>
+		<h2><%=fakeComments[index]['user'] %></h2>
+		<h3><%= fakeComments[index]['text'] %></h3>
+		<a href="/comment/<%= fakeComments[index]['id'] %>">Details</a>
+		<br />
+		<% } %>
+	</body>
+</html>

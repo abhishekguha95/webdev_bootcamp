@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Products</title>
+		<style>
+			.flex-container {
+				list-style-type: none;
+				display: flex;
+				align-items: center;
+				width: 300px;
+				justify-content: space-between;
+			}
+
+			a {
+				background-color: #28a5df;
+				color: white;
+				padding: 14px 25px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+			}
+
+			#delete-btn {
+				background-color: #e23636;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="flex-container">
+			<h1>All Products</h1>
+			<a href="/new-product">Create</a>
+		</div>
+
+		<ul>
+			<% for( let product of allProducts) { %>
+			<li class="flex-container">
+				<h3><%= product.name %></h3>
+				<a href="/product/<%= product._id %>">Details</a>
+				<a id="delete-btn" href="/product/<%= product._id %>/delete"
+					>Delete</a
+				>
+			</li>
+			<hr />
+
+			<% } %>
+		</ul>
+	</body>
+</html>

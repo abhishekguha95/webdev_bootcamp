@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Product Detail</title>
+		<style>
+			a {
+				background-color: #7254c4;
+				color: white;
+				padding: 14px 25px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="product-details-text">
+				<h2>Product ID: <%= product._id %></h2>
+				<h2>Name: <%= product.name %></h2>
+				<h2>Cost: <%= product.cost %></h2>
+				<h2>Category: <%= product.category %></h2>
+			</div>
+			<div class="edit-button-container">
+				<a href="/product/<%= product._id %>/edit">Edit Details</a>
+			</div>
+		</div>
+	</body>
+</html>

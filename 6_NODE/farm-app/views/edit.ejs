@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>New Product</title>
+	</head>
+	<body>
+		<h1>Update product</h1>
+		<form action="/product/<%= product._id %>/edit" method="post">
+			<label for="category">Name: </label>
+			<input type="text" name="name" value="<%= product.name %>" />
+			<br />
+			<br />
+			<label for="category">Cost: </label>
+			<input
+				type="number"
+				step="0.01" 
+				min="0"
+				name="cost"
+				id=""
+				value="<%= product.cost %>"
+			/>
+			<br />
+			<br />
+			<label for="category">Choose a category:</label>
+			<select name="category" id="category">
+				<option value="a" <% if (product.category === 'a') { %>
+					selected
+				<% } %>>a</option>
+				<option value="b" <% if (product.category === 'b') { %>
+					selected
+				<% } %>>b</option>
+				<option value="c" <% if (product.category === 'c') { %>
+					selected
+				<% } %>>c</option>
+			</select>
+			<br />
+			<br />
+			<input type="submit" />
+			<input type="reset" />
+		</form>
+	</body>
+</html>
