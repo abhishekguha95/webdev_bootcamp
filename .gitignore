@@ -1,4 +1,5 @@
-/6_NODE/*/node_modules
+/*/*/node_modules
+/*/node_modules
 /*/.vscode
 /*/*/.vscode
 /*/*/*/.vscode

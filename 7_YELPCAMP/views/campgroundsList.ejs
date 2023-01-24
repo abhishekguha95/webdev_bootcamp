@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Campgrounds List</title>
+		<style>
+			.flex-container {
+				list-style-type: none;
+				display: flex;
+				align-items: center;
+				width: 100%;
+				justify-content: space-evenly;
+			}
+
+			a {
+				background-color: #28a5df;
+				color: white;
+				padding: 14px 25px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+			}
+
+			#delete-btn:hover {
+				cursor: pointer;
+			}
+
+			#delete-btn {
+				border-width: 0px;
+				background-color: #e23636;
+				color: white;
+				padding: 14px 25px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+			}
+
+			.campground-name {
+				width: 300px;
+			}
+
+			.campground-btns {
+				width: 400px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="flex-container">
+			<h1>All Campgrounds</h1>
+			<a href="/new-campground">Create</a>
+		</div>
+
+		<ul>
+			<% for( let campground of allCampgrounds) { %>
+			<li class="flex-container">
+				<div class="campground-name">
+					<h3><%= campground.name %></h3>
+				</div>
+				<div class="campground-btns flex-container">
+					<a href="/campground/<%= campground._id %>">Details</a>
+					<form
+						action="/campground/<%= campground._id %>?_method=delete"
+						method="post"
+					>
+						<input
+							type="submit"
+							value="Delete"
+							id="delete-btn"
+							name="delete-btn"
+						/>
+					</form>
+				</div>
+			</li>
+			<hr />
+
+			<% } %>
+		</ul>
+	</body>
+</html>

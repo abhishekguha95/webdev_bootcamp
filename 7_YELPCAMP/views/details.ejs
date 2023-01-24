@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Campground Details</title>
+		<style>
+			a {
+				background-color: #7254c4;
+				color: white;
+				padding: 14px 25px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="campground-details-text">
+				<h2>Campground ID: <%= campground._id %></h2>
+				<h2>Name: <%= campground.name %></h2>
+				<h2>Price: <%= campground.price %></h2>
+				<h2>Description: <%= campground.description %></h2>
+			</div>
+			<div class="edit-button-container">
+				<a href="/campground/<%= campground._id %>/edit"
+					>Edit Details</a
+				>
+				<a href="/campgrounds/">All Campgrounds</a>
+			</div>
+		</div>
+	</body>
+</html>
